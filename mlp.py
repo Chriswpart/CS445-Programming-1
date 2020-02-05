@@ -26,9 +26,9 @@ test = np.array(list(data2))
 # store data and labels
 # scale data between 0 and 1
 train_data = np.asfarray(train[:, 1:]) / 255
-#temp = np.asfarray(train_data[:15000])
-temp = np.asfarray(train_data[:30000])
-train_data = temp
+#temp = np.asfarray(train_data[:15000])     # experiment 3 training set 1/4 size
+#temp = np.asfarray(train_data[:30000])     # experiment 3 training set 1/2 size
+#train_data = temp                          # used for experiment 3
 test_data = np.asfarray(test[:, 1:]) / 255
 train_label = np.asfarray(train[:, :1])
 test_label = np.asfarray(test[:, :1])
