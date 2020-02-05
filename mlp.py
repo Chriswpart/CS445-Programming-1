@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from scipy.special import expit
-from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.metrics import confusion_matrix
 
 # experiment parameters
 bias = 1            #bias
@@ -71,9 +71,9 @@ def mlp(epoch, data, label, one_hot, flag):
     x = x.reshape(1, 784)                 # reshape x
 
     # activation of hidden and output layers
-    zh = np.dot(x,wih)
-    sigh = expit(zh)
-    hi[0,1:] = sigh
+    zh = np.dot(x,wih)      # zh = the dot product part of sigmoid activation
+    sigh = expit(zh)        # expit is (1/(1+e^-zh)) the final part of the sigmoid activation
+    hi[0,1:] = sigh         # store activation
     zo = np.dot(hi, woh)
     sigo = expit(zo)
 
